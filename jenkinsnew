@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('gitjob') {
+            steps {
+                echo 'Cloning addressbook git-repo'
+                git 'https://github.com/poojagowda1320/addressbook.git'
+            }
+        }
+        stage('buildjob') {
+            steps {
+                echo 'Building...'
+                sh 'mvn compile'
+            }
+        }
+        stage('testjob') {
+            steps {
+                echo 'Testing...'
+                sh 'mvn test'
+            }
+        }
+        stage('deployjob') {
+            steps {
+                echo 'Deploying...'
+                sh 'mvn install'
+                archiveArtifacts artifacts: 'Dockerfile', followSymlinks: false
+            }
+        }
+    }
+}
