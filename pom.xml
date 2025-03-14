@@ -305,16 +305,17 @@
                                     <groupId>org.jacoco</groupId>
                                     <artifactId>jacoco-maven-plugin</artifactId>
                                     <version>0.7.2.201409121644</version>
-                                </plugin>
-                                <plugin>
-                                    <groupId>org.apache.maven.plugins</groupId>
-                                    <artifactId>maven-checkstyle-plugin</artifactId>
-                                    <version>3.0.1</version>
-                                    <!--<configuration>-->
-                                    <!--<configLocation>gol-checkstyle.xml</configLocation>-->
-                                    <!--</configuration>-->
-                                </plugin>
-                                <plugin>
+				    <reporting>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+        </plugin>
+    </plugins>
+</reporting>
+
+					
+                               
                                     <groupId>org.apache.maven.plugins</groupId>
                                     <artifactId>maven-pmd-plugin</artifactId>
                                     <version>3.2</version>
