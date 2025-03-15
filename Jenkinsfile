@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Compile') {
+        stage('Compile1') {
             steps { 
                 sh 'mvn compile'
             }
