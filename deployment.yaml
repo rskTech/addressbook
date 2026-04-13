@@ -1,4 +1,4 @@
-# test
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -19,7 +19,7 @@ spec:
         app: mydeploy
     spec:
       containers:
-      - image: rajendrait99/addressbook:1.0
+      - image: 409171460696.dkr.ecr.ap-south-1.amazonaws.com/jenkinsecr:latest
         name: addressbook
         ports:
         - containerPort: 8080

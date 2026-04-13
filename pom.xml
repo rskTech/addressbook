@@ -5,7 +5,7 @@
     <groupId>com.edurekademo.tutorial</groupId>
     <artifactId>addressbook</artifactId>
     <packaging>war</packaging>
-    <version>2.0</version>
+    <version>3.4</version>
     <name>Vaadin Addressbook example</name>
 
     <properties>
@@ -79,7 +79,7 @@
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.0.1</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
         <!-- The huge set of awesome Java libraries are available as such 
             for Vaadin developers, you should take the advantage of those. In this app 
@@ -191,7 +191,14 @@
 					</excludes>
 				</configuration>
 			</plugin>
-
+	<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-war-plugin</artifactId>
+    <version>3.4.0</version>
+    <configuration>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+    </configuration>
+</plugin>
         </plugins>
 		<finalName>addressbook</finalName>
     </build>
