@@ -2,18 +2,24 @@ pipeline {
     agent any
     stages {
         stage('Compile') {
-            steps { 
+            steps {
                 sh 'mvn compile'
             }
         }
         stage('test') {
-            steps { 
+            steps {
                 sh 'mvn test'
             }
         }
         stage('package') {
-            steps { 
+            steps {
                 sh 'mvn package'
+            }
+        }
+        stage('Fingerprint') {
+            steps {
+                // This tells Jenkins to record the MD5 hash of your build artifact
+                fingerprint 'target/*.jar'
             }
         }
     }
